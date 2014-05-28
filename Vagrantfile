@@ -5,8 +5,13 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "chef/ubuntu-14.04"
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.provision :shell, :path => "vim.sh", :privileged => false
   config.vm.network :forwarded_port, host: 4567, guest: 80
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 2
+  end
 end

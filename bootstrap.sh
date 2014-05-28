@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-add-apt-repository ppa:fcwu-tw/ppa
 apt-get update
-apt-get install libgmp-dev alex happy curl make python-software-properties vim ctags git -y
+apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev make python-software-properties vim ctags git -y
 
 GHC_VER=7.8.2
 CABAL_VER=1.20.0.2
