@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git -y
+apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux -y
 
 GHC_VER=7.8.2
 CABAL_VER=1.20.0.2
@@ -27,4 +27,16 @@ else
   cd /tmp/cabal-install-$CABAL_VER
   echo "-----> Installing cabal-install $CABAL_VER"
   ./bootstrap.sh --global
+fi
+
+echo "-----> Saving system tmux.conf"
+cp /vagrant/tmux.conf /etc
+
+if hash wemux 2>/dev/null; then
+  echo "-----> Wemux detected"
+else
+  echo "-----> Installing wemux"
+  git clone git://github.com/zolrath/wemux.git /usr/local/share/wemux
+  ln -s /usr/local/share/wemux/wemux /usr/local/bin/wemux
+  cp /vagrant/wemux.conf /usr/local/etc
 fi
