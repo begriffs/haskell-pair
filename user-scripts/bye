@@ -1,0 +1,5 @@
+#!/bin/sh
+
+emux kick friend
+echo "Removing friend's authorized keys"
+sudo rm -f /home/friend/.ssh/authorized_keys

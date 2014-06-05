@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update
-apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux -y
+apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby -y
 
 GHC_VER=7.8.2
 CABAL_VER=1.20.0.2
@@ -40,3 +40,18 @@ else
   ln -s /usr/local/share/wemux/wemux /usr/local/bin/wemux
   cp /vagrant/wemux.conf /usr/local/etc
 fi
+
+if hash gh-auth 2>/dev/null; then
+  echo "-----> github-auth detected"
+else
+  echo "-----> Installing Github key-based auth"
+  gem install github-auth
+fi
+
+echo "-----> Adding pairing scripts"
+mkdir -p /home/vagrant/bin
+cp /vagrant/user-scripts/* /home/vagrant/bin
+
+echo "-----> Creating user 'friend'"
+adduser friend
+echo "wemux pair; exit" > /home/friend/.bash_profile
