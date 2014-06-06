@@ -49,9 +49,12 @@ else
 fi
 
 echo "-----> Adding pairing scripts"
-mkdir -p /home/vagrant/bin
-cp /vagrant/user-scripts/* /home/vagrant/bin
+mkdir -p $HOME/bin
+cp /vagrant/user-scripts/* $HOME/bin
 
 echo "-----> Creating user 'friend'"
 adduser friend
 echo "wemux pair; exit" > /home/friend/.bash_profile
+
+echo "-----> Initializing bash profile"
+echo "export PATH=$PATH:$HOME/bin ; wemux start" > $HOME/.bash_profile

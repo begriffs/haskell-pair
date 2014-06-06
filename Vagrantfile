@@ -14,4 +14,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.memory = 2048
     v.cpus = 2
   end
+  config.vm.provider :digital_ocean do |provider, override|
+    override.ssh.private_key_path = '~/.ssh/pair'
+    override.vm.box = 'digital_ocean'
+    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+
+    provider.region = 'San Francisco 1'
+    provider.size = '2GB'
+    provider.client_id = ''
+    provider.api_key = ''
+  end
 end
