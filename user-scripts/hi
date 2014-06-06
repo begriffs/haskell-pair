@@ -2,6 +2,7 @@
 
 gh-auth add --users=$1
 echo "Copying keys to friend user"
+mkdir -p /home/friend/.ssh
 sudo cp ~/.ssh/authorized_keys /home/friend/.ssh/authorized_keys
 sudo chown -R friend:friend /home/friend/.ssh
 gh-auth remove --users=$1
