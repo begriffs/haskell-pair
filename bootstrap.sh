@@ -30,7 +30,7 @@ else
 fi
 
 echo "-----> Saving system tmux.conf"
-cp /vagrant/tmux.conf /etc
+cp /vagrant/config/tmux.conf /etc
 
 if hash wemux 2>/dev/null; then
   echo "-----> Wemux detected"
@@ -38,7 +38,7 @@ else
   echo "-----> Installing wemux"
   git clone git://github.com/zolrath/wemux.git /usr/local/share/wemux
   ln -s /usr/local/share/wemux/wemux /usr/local/bin/wemux
-  cp /vagrant/wemux.conf /usr/local/etc
+  cp /vagrant/config/wemux.conf /usr/local/etc
 fi
 
 if hash gh-auth 2>/dev/null; then
@@ -63,4 +63,4 @@ ufw allow ssh
 ufw --force enable
 
 echo "-----> Hardening OpenSSH"
-cp /vagrant/sshd_config /etc/ssh/sshd_config
+cp /vagrant/config/sshd_config /etc/ssh/sshd_config
