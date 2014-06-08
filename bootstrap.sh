@@ -26,7 +26,7 @@ else
   curl --silent -L "$CABAL_URL" | tar zx -C /tmp
   cd /tmp/cabal-install-$CABAL_VER
   echo "-----> Installing cabal-install $CABAL_VER"
-  ./bootstrap.sh --global
+  ./bootstrap.sh --global --no-doc
 fi
 
 echo "-----> Saving system tmux.conf"
