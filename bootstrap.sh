@@ -64,3 +64,6 @@ ufw --force enable
 
 echo "-----> Hardening OpenSSH"
 cp /vagrant/config/sshd_config /etc/ssh/sshd_config
+
+echo "-----> Installing Heroku toolbelt"
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
