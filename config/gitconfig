@@ -7,6 +7,9 @@
   path = ~/.gitconfig.d/push.txt
   path = ~/.gitconfig.d/rerere.txt
 
+[core]
+  pager = "less -F -X -R"
+
 [merge]
   tool = diffconflicts
 
