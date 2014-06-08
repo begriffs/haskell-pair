@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get update -q
-apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby ufw xz-utils -y -q
+apt-get install gcc libgmp-dev alex happy curl libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby ufw xz-utils zsh -y -q
 
 GHC_VER=7.8.2
 CABAL_VER=1.20.0.2
@@ -55,9 +55,6 @@ cp /vagrant/user-scripts/* $HOME/bin
 echo "-----> Creating user 'friend'"
 adduser friend
 echo "wemux pair; exit" > /home/friend/.bash_profile
-
-echo "-----> Initializing bash profile"
-echo "export PATH=$PATH:$HOME/bin ; wemux start" > $HOME/.bash_profile
 
 echo "-----> Firewalling everything except SSH"
 ufw default deny incoming
