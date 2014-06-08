@@ -1,0 +1,16 @@
+[include]
+  path = ~/.gitconfig.d/alias.txt
+  path = ~/.gitconfig.d/color.txt
+  path = ~/.gitconfig.d/core.txt
+  path = ~/.gitconfig.d/diff.txt
+  path = ~/.gitconfig.d/merge.txt
+  path = ~/.gitconfig.d/push.txt
+  path = ~/.gitconfig.d/rerere.txt
+
+[merge]
+  tool = diffconflicts
+
+[mergetool "diffconflicts"]
+  cmd           = 'diffconflicts vim $BASE $LOCAL $REMOTE $MERGED'
+  trustExitCode = true
+  keepBackup    = false
