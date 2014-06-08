@@ -1,5 +1,6 @@
 #!/bin/sh
 
-wemux kick friend
+echo "Signing friend out of the server"
+killall --user friend
 echo "Removing friend's authorized keys"
 sudo rm -f /home/friend/.ssh/authorized_keys
