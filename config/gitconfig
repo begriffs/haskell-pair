@@ -10,6 +10,9 @@
 [core]
   pager = "less -F -X -R"
 
+[alias]
+  s = status -sb
+
 [merge]
   tool = diffconflicts
 
