@@ -53,3 +53,37 @@ When you're done working with them, run
 ```sh
 unpair
 ```
+
+## Tmux Keybindings
+
+<table>
+<tbody>
+  <tr>
+    <td>C-a |</td><td>Split vertically</td>
+  </tr>
+  <tr>
+    <td>C-a -</td><td>Split horizontally</td>
+  </tr>
+  <tr>
+    <td>C-h</td><td>Move to leftward pane</td>
+  </tr>
+  <tr>
+    <td>C-l</td><td>Move to rightward pane</td>
+  </tr>
+  <tr>
+    <td>C-j</td><td>Move to downward pane</td>
+  </tr>
+  <tr>
+    <td>C-k</td><td>Move to upward pane</td>
+  </tr>
+  <tr>
+    <td>C-a [</td><td>Detach cursor to scroll (ENTER stops)</td>
+  </tr>
+  <tr>
+    <td>C-a c</td><td>Create new window</td>
+  </tr>
+  <tr>
+    <td>C-a [0-9]</td><td>Switch to numbered window</td>
+  </tr>
+</tbody>
+</table>
