@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="http://youtu.be/7sr8cAIwdBs"><img src="screencast.png" /></a>
+</p>
+
 ## Running a local virtual dev box
 
 1. Clone this repo
