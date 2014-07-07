@@ -23,7 +23,7 @@ vim configured to be a Haskell IDE.
 1. Sign up at [DigitalOcean](https://www.digitalocean.com/)
 1. Fill out your DigitalOcean client ID and API key in `Vagrantfile`
 1. `vagrant up --provider=digital_ocean`
-1. `vagran ssh`
+1. `vagrant ssh`
 
 You'll be logged in to a newly created DigitalOcean "droplet."
 
