@@ -6,5 +6,5 @@ else
 
   echo "-----> Customizing .zshrc"
   cp /vagrant/.zshrc $HOME
-  chsh -s /bin/zsh
+  chsh -s /bin/zsh <<< "vagrant"
 fi
