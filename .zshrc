@@ -49,7 +49,7 @@ ZSH_THEME="minimal"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git cabal tmux vi-mode heroku postgres)
+plugins=(git cabal tmux vi-mode heroku postgres ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -57,6 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# enable ssh forwarding
+zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
