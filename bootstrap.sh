@@ -3,8 +3,8 @@
 apt-get update -q
 apt-get install gcc libgmp-dev alex happy curl libpq-dev libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby ufw fail2ban xz-utils zsh -y -q
 
-GHC_VER=7.8.3
-CABAL_VER=1.20.0.3
+GHC_VER=7.8.4
+CABAL_VER=1.22.0.0
 
 if hash ghc 2>/dev/null; then
   echo "-----> GHC detected"

@@ -30,7 +30,7 @@ You'll be logged in to a newly created DigitalOcean "droplet."
 ## Included software
 
 1. Ubuntu 14.04
-1. GHC 7.8.2, Cabal 1.20
+1. GHC 7.8.4, Cabal 1.22
 1. [haskell-vim-now](https://github.com/begriffs/haskell-vim-now)
 1. [SixArm git config](https://github.com/SixArm/sixarm_git_gitconfig)
 1. Firewall, hardened OpenSSH, Fail2ban
