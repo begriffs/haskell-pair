@@ -65,7 +65,7 @@ unpair
     <td>C-a |</td><td>Split vertically</td>
   </tr>
   <tr>
-    <td>C-a -</td><td>Split horizontally</td>
+    <td>C-a _</td><td>Split horizontally</td>
   </tr>
   <tr>
     <td>C-h</td><td>Move to leftward pane</td>
