@@ -22,10 +22,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    provider.image = '14.04 x64'
+    provider.image = 'ubuntu-14-04-x64'
     provider.region = 'sfo1'
     provider.size = '2GB'
-    provider.token = 'fill-in-your-token'
+    provider.token = ENV['DIGITAL_OCEAN_TOKEN_V2'] 
     provider.ssh_key_name = 'Vagrant'
   end
 end
