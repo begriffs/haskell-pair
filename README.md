@@ -27,6 +27,9 @@ vim configured to be a Haskell IDE.
 
 You'll be logged in to a newly created DigitalOcean "droplet."
 
+ps: for some reason I had to create a ssh key with a password otherwise 
+I could not get ssh access to the box 
+
 ## Included software
 
 1. Ubuntu 14.04
