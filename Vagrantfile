@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     provider.image = 'ubuntu-14-04-x64'
     provider.region = 'sfo1'
-    provider.size = '2GB'
+    provider.size = '4GB'
     provider.token = ENV['DIGITAL_OCEAN_TOKEN_V2'] 
     provider.ssh_key_name = 'Vagrant'
   end
