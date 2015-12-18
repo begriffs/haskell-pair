@@ -22,6 +22,8 @@ vim configured to be a Haskell IDE.
 1. Install [Vagrant](http://www.vagrantup.com/)
 1. Sign up at [DigitalOcean](https://www.digitalocean.com/)
 1. Fill out your DigitalOcean client ID and API key in `Vagrantfile`
+1. `vagrant plugin install vagrant-digitalocean`
+1. `vagrant box add digital_ocean https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box`
 1. `vagrant up --provider=digital_ocean`
 1. `vagrant ssh`
 
@@ -33,7 +35,7 @@ I could not get ssh access to the box
 ## Included software
 
 1. Ubuntu 14.04
-1. GHC 7.8.4, Cabal 1.22
+1. New GHC via Stack
 1. [haskell-vim-now](https://github.com/begriffs/haskell-vim-now)
 1. [SixArm git config](https://github.com/SixArm/sixarm_git_gitconfig)
 1. Firewall, hardened OpenSSH, Fail2ban

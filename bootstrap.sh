@@ -1,33 +1,15 @@
 #!/usr/bin/env bash
 
 apt-get update -q
-apt-get install gcc libgmp-dev alex happy curl libpq-dev libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby ufw fail2ban xz-utils zsh -y -q
+apt-get install gcc libgmp-dev alex happy curl libpq-dev libcurl4-gnutls-dev libpcre3-dev libffi-dev make python-software-properties vim ctags git tmux ruby ufw fail2ban xz-utils zsh libpq-dev postgresql -y -q
 
-GHC_VER=7.8.4
-CABAL_VER=1.22.0.0
+echo "-----> Installing Stack"
+wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key | apt-key add -
+echo 'deb http://download.fpcomplete.com/ubuntu/trusty stable main'|tee /etc/apt/sources.list.d/fpco.list
+apt-get update && apt-get install stack -y
 
-if hash ghc 2>/dev/null; then
-  echo "-----> GHC detected"
-else
-  GHC_URL="http://www.haskell.org/ghc/dist/$GHC_VER/ghc-$GHC_VER-x86_64-unknown-linux-deb7.tar.xz"
-  echo "-----> Downloading GHC $GHC_VER"
-  curl --silent -L "$GHC_URL" | unxz | tar x -C /tmp
-  cd /tmp/ghc-$GHC_VER
-  echo "-----> Installing GHC $GHC_VER"
-  ./configure
-  make install
-fi
-
-if hash cabal 2>/dev/null; then
-  echo "-----> Cabal detected"
-else
-  CABAL_URL="http://www.haskell.org/cabal/release/cabal-install-$CABAL_VER/cabal-install-$CABAL_VER.tar.gz"
-  echo "-----> Downloading cabal-install $CABAL_VER"
-  curl --silent -L "$CABAL_URL" | tar zx -C /tmp
-  cd /tmp/cabal-install-$CABAL_VER
-  echo "-----> Installing cabal-install $CABAL_VER"
-  ./bootstrap.sh --global --no-doc
-fi
+echo "-----> Setting up GHC"
+stack setup
 
 echo "-----> Saving system tmux.conf"
 cp /vagrant/config/tmux.conf /etc

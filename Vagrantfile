@@ -10,8 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :path => "vim.sh", :privileged => false
   config.vm.provision :shell, :path => "zsh.sh", :privileged => false
   config.vm.provision :shell, :path => "git.sh", :privileged => false
-  config.vm.provision :shell, :path => "hi.sh", :privileged => false
-  config.vm.network :forwarded_port, host: 4567, guest: 80
+  config.vm.network :forwarded_port, host: 8181, guest: 80
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
@@ -25,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     provider.image = 'ubuntu-14-04-x64'
     provider.region = 'sfo1'
     provider.size = '4GB'
-    provider.token = ENV['DIGITAL_OCEAN_TOKEN_V2'] 
+    provider.token = ENV['DIGITAL_OCEAN_TOKEN_V2']
     provider.ssh_key_name = 'Vagrant'
   end
 end
