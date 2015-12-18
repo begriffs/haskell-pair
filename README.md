@@ -92,3 +92,25 @@ unpair
   </tr>
 </tbody>
 </table>
+
+## SSH agent forwarding
+
+To access your github repos on the pairing server while keeping
+your credentials safe on your lacal machine use agent forwarding.
+
+Edit your local `~/.ssh/config` file and add an entry for your
+pair server host.
+```
+Host [ip address]
+  ForwardAgent yes
+```
+
+Before ssh'ing into the pairing server run
+```sh
+ssh-add ~/.ssh/[keyname]
+```
+and it will be available remotely. To test agent forwarding run
+this remotely
+```sh
+ssh -T git@github.com
+```
