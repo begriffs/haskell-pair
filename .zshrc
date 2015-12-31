@@ -55,7 +55,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$(stack path --bin-path --verbosity silent)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
