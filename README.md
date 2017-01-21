@@ -40,6 +40,7 @@ I could not get ssh access to the box
 1. [SixArm git config](https://github.com/SixArm/sixarm_git_gitconfig)
 1. Firewall, hardened OpenSSH, Fail2ban
 1. Oh My ZSH, Tmux/wemux
+1. Mumble voice chat server (port 64738)
 
 ## Pairing
 

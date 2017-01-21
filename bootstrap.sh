@@ -36,10 +36,11 @@ echo "-----> Creating user 'friend'"
 adduser friend
 echo "wemux pair; exit" > /home/friend/.bash_profile
 
-echo "-----> Firewalling everything except SSH"
+echo "-----> Firewalling everything except SSH and Mumble"
 ufw default deny incoming
 ufw default allow outgoing
 ufw allow ssh
+ufw allow 64738
 ufw --force enable
 
 echo "-----> Hardening OpenSSH"
