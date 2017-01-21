@@ -1,2 +1,3 @@
 echo "-----> Installing/updating haskell-vim-now"
-curl -o - https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh | bash
+curl -L https://git.io/haskell-vim-now > /tmp/haskell-vim-now.sh
+bash /tmp/haskell-vim-now.sh

@@ -34,7 +34,7 @@ I could not get ssh access to the box
 
 ## Included software
 
-1. Ubuntu 14.04
+1. Ubuntu 16.04
 1. New GHC via Stack
 1. [haskell-vim-now](https://github.com/begriffs/haskell-vim-now)
 1. [SixArm git config](https://github.com/SixArm/sixarm_git_gitconfig)

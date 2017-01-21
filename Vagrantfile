@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "chef/ubuntu-14.04"
+  config.vm.box = "bento/ubuntu-16.04"
   config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.provision :shell, :path => "vim.sh", :privileged => false
   config.vm.provision :shell, :path => "zsh.sh", :privileged => false
@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     override.vm.box = 'digital_ocean'
     override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    provider.image = 'ubuntu-14-04-x64'
+    provider.image = 'ubuntu-16-04-x64'
     provider.region = 'sfo1'
     provider.size = '4GB'
     provider.token = ENV['DIGITAL_OCEAN_TOKEN_V2']
