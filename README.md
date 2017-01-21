@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="http://youtu.be/7sr8cAIwdBs"><img src="screencast.png" /></a>
+  <a href="https://begriffs.com/posts/2014-06-09-pair-programming-with-haskell-and.html"><img src="screencast.png" /></a>
 </p>
 
 ## Installation
