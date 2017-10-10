@@ -29,8 +29,8 @@ vim configured to be a Haskell IDE.
 
 You'll be logged in to a newly created DigitalOcean "droplet."
 
-ps: for some reason I had to create a ssh key with a password otherwise 
-I could not get ssh access to the box 
+ps: for some reason I had to create a ssh key with a password otherwise
+I could not get ssh access to the box
 
 ## Included software
 
@@ -94,10 +94,63 @@ unpair
 </tbody>
 </table>
 
-## SSH agent forwarding
 
-To access your github repos on the pairing server while keeping
-your credentials safe on your lacal machine use agent forwarding.
+## Publishing a bare git repo to export work (safest)
+
+To safely write code in the pairing environment and then export it to
+some kind of github account, you'll probably want to create a
+bare-repo locally on the pairing server, push your development to that,
+and then pull your new work onto your safe local development laptop,
+where you can then push it to your gitlab/ github server safely.
+
+
+###### On Pairing Server
+```
+# Creating a bare repo, a safe portal allowing code to flow into safer places
+$ sudo mkdir /pairing && sudo chown ${USER} /pairing
+$ mkdir /pairing/my_project && cd "$_"
+$ git init --bare
+
+```
+
+###### On Your Local System
+```
+# Push the code to the remote
+$ git remote add pairing-server:/pairing/my_project
+$ git push pairing-server master
+```
+
+###### On Pairing Server
+```
+# Clone the bare repo, and start hacking
+$ mkdir ~/dev && cd ~/dev
+$ git clone /pairing/my_project
+$ cd my_project
+
+$ echo 'hi' >> README.md && git add . && git commit -m "adds a thing"
+$ git push origin master # it's now waiting in the portal :)
+```
+
+###### On Your Local System
+```
+# Collect the new code
+$ git pull pairing-server master
+```
+
+
+## SSH agent forwarding (for use with trusted pairs)
+
+If both parties trust each other, then user agent forwarding can be
+enabled to allow convienient access to your github repos through the
+pairing server.  But if trust has not been established, forwarding
+your user agent can potentially allow one of the pairs usage of all
+the private keys in your local machine's user agent, and these keys
+could potentially be misused to access remote machines or delete
+github repos, etc, etc.
+
+Understanding the
+[risks](https://www.clockwork.com/news/2012/09/28/602/ssh_agent_hijacking),
+to access your github repos on the pairing server use agent forwarding.
 
 Edit your local `~/.ssh/config` file and add an entry for your
 pair server host.
